@@ -21,5 +21,5 @@ cd <working directory>
 
 python oos.py
 
-Copy the host link ported at :5000
+Copy the host link ported at :5000 and run it on your browser
 
