@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">P&G Global Innovation Challenge</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Sumit & Pawan</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Sumit & Pawan</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Stockout Prevention</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the status of Item Stockout with probability
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="f1"><b>Current Inventory Level</b></label>
+            <br>
+          <input placeholder="Enter national_inv" name="national_inv" id="f1" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f2"><b>Transit time for Product</b></label>
+            <br>
+          <input placeholder="Enter lead_time" name="lead_time" id="f2" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f3"><b>Amount in transit from source</b></label>
+            <br>
+          <input placeholder="Enter in_transit_qty" name="in_transit_qty" id="f3" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f4"><b>Forecasted Sales for Next 3 months</b></label>
+            <br>
+          <input placeholder="Enter forecast_3_month" name="forecast_3_month" id="f4" type="text" class="validate">
+        </div>
+        
+        
+        <div class="input-field col s4">
+            <label for="f5"><b>Sales quantity of 1 month</b></label>
+            <br>
+          <input placeholder="Enter sales_1_month" name="sales_1_month" id="f5" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f6"><b>Sales quantity of past 3months</b></label>
+            <br>
+          <input placeholder="Enter sales_3_month" name="sales_3_month" id="f6" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f7"><b>Min Recommended amount to stock</b></label>
+            <br>
+          <input placeholder="Enter min_bank" name="min_bank" id="f7" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f8"><b>Source Issue for part</b></label>
+            <br>
+          <input placeholder="Flag-Yes:1 No:0" name="potential_issue" id="f8" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f9"><b>Parts overdue from source</b></label>
+            <br>
+          <input placeholder="Enter pieces_past_due" name="pieces_past_due" id="f9" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f10"><b>Source Perfomance for prior 6months</b></label>
+            <br>
+          <input placeholder="Enter: perf_6_month_avg" name="perf_6_month_avg" id="f10" type="text" class="validate">
+        </div>
+    
+        
+        <div class="input-field col s4">
+            <label for="f11"><b>Amount of stock orders overdue</b></label>
+            <br>
+          <input placeholder="Enter local_bo_qty" name="local_bo_qty" id="f11" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f12"><b>Deck Rise</b></label>
+            <br>
+          <input placeholder="Flag-Yes:1 No:0" name="deck_risk" id="f12" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f13"><b>Original Equipments (OE constraints)</b></label>
+            <br>
+          <input placeholder="Flag-Yes:1 No:0" name="oe_constraint" id="f13" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+            <label for="f14"><b>Production Part Approval Process (PPAP) Risk</b></label>
+            <br>
+          <input placeholder="Flag-Yes:1 No:0" name="ppap_risk" id="f14" type="text" class="validate">
+        </div>
+        
+        <div class="input-field col s4">
+
+          <label for="f15"><b>Stop Automatic Buy</b></label>
+            <br>
+          <input id="f15" name="stop_auto_buy" placeholder="Flag-Yes:1 No:0"  type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="f16"><b>Revenue Stop</b></label>
+            <br>
+          <input id="f16" name="rev_stop" placeholder="Flag-Yes:1 No:0" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        {{pred}}<br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
