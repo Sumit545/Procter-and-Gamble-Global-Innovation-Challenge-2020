@@ -1,5 +1,4 @@
 # Procter-and-Gamble-Global-Innovation-Challenge-2020
-Predicition of Stockout Probabilities in FMCG industries
 
 This repository contains ML approaches to predict the probabilities of Stockouts and Backorders in FMCG industries.
 
