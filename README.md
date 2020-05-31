@@ -14,8 +14,11 @@ Autoencoders
 
 ## Guidelines to run Flask
 Open your terminal
+
 pip install flask
+
 cd <working directory>
+
 python oos.py
 
 Copy the host link ported at :5000
