@@ -5,8 +5,12 @@ This repository contains ML approaches to predict the probabilities of Stockouts
 
 ## Requirements to run the model notebooks
 Python3
+
 Flask
+
 Anaconda Distribution
+
+Autoencoders
 
 ## Guidelines to run Flask
 Open your terminal
